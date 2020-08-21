@@ -30,6 +30,17 @@ numberValid="^[+]{1}[0-9]{1,3}[[:space:]]{1}[0-9]{10}$"
 		echo " Mobile number your have entered is incorrect!!!! "
 	fi
 }
+passwordValidation() {
+
+if [[ ${#password} -ge 8 && "$password" == *[[:lower:]]*  ]]
+
+then
+   echo " Correct Password "
+else
+   echo "  Incorrect Password should contain atleast 8 characters "
+
+fi
+}
 userRegistration(){
 echo " ***Note that your name starts with Cap and minimum 3 characters"
 read -p  " Enter your valid first name for User Registration Process :: " user_firstname
@@ -42,5 +53,9 @@ emailValidation
 echo "***Country code followed  by your 10 digit  mobile number Ex.+91 8152813488 "
 read -p  " Enter your valid Mobile number for updating information :: " user_number
 numberValidation
+
+echo "***Password should contain minimum 8 characters "
+read -p  " Please Enter your Password " password
+passwordValidation
 }
 userRegistration
