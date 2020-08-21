@@ -32,7 +32,7 @@ numberValid="^[+]{1}[0-9]{1,3}[[:space:]]{1}[0-9]{10}$"
 }
 passwordValidation() {
 
-if [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* &&  "$password" == *[0-9]*  ]]
+if [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* &&  "$password" == *[0-9]* && "$password" == *([[@^#%]]{1})*  ]]
 
 then
    echo " Correct Password "
